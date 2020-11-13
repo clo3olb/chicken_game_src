@@ -1,0 +1,140 @@
+#Game {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .balance_area {
+        flex: 1;
+        border-radius: 2rem 0 0 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .balance {
+            position: relative;
+            width: 40rem;
+            height: 30rem;
+            z-index: 20;
+
+            .balance_center {
+                position: absolute;
+                z-index: 100;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: 100%;
+            }
+            .balance_arm {
+                position: absolute;
+                top: 10rem;
+                width: 40rem;
+                .balance_left,
+                .balance_right {
+                    transform-origin: top;
+                    top: 0;
+                    width: 10rem;
+                    position: absolute;
+                }
+                .balance_left {
+                    left: 0;
+                    &.pop {
+                        animation: pop 0.2s ease forwards;
+                    }
+                }
+                .balance_right {
+                    right: 0;
+                }
+                .value {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2rem;
+                    margin-top: 1rem;
+
+                    font-family: "Baloo 2", cursive;
+                    img {
+                        width: 3rem;
+                    }
+                }
+            }
+            &.left {
+                .balance_arm {
+                    animation: rotateLeft 2s ease forwards;
+                    .balance_left,
+                    .balance_right {
+                        animation: rotateRight 2s ease forwards;
+                    }
+                }
+            }
+            &.right {
+                .balance_arm {
+                    animation: rotateRight 2s ease forwards;
+                    .balance_left,
+                    .balance_right,
+                    .balance_left.pop {
+                        animation: rotateLeft 2s ease forwards;
+                    }
+                }
+            }
+        }
+    }
+    .palette {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        .palette_item {
+            width: 4rem;
+        }
+    }
+    #selected {
+        position: fixed;
+        top: -100%;
+        left: -100%;
+        width: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #Game {
+        flex-direction: column;
+        .palette {
+            flex-direction: row;
+        }
+    }
+    html {
+        font-size: 8px;
+    }
+}
+
+@keyframes rotateRight {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(15deg);
+    }
+}
+@keyframes rotateLeft {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-15deg);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

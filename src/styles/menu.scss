@@ -1,0 +1,28 @@
+#Menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .setting {
+        width: 4rem;
+    }
+    .stages {
+        display: flex;
+        .stage {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 1rem;
+            border: 5px solid $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            margin-right: 1rem;
+            &:last-child {
+                margin-right: 0;
+            }
+            img {
+                width: 80%;
+            }
+        }
+    }
+}
