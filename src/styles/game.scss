@@ -5,7 +5,8 @@
 
     .balance_area {
         flex: 1;
-        border-radius: 2rem 0 0 2rem;
+        border-radius: 2rem;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;

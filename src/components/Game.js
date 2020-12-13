@@ -103,9 +103,10 @@ export default function Game() {
         ctx.globalAlpha = 0.4;
         let img = new Image();
         let start = 0;
-        setInterval(() => {
+        function animate() {
+            requestAnimationFrame(animate)
             const size = 100;
-            const gap = 8;
+            const gap = 0;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < 10; i++) {
                 for (let j = 0; j < 10; j++) {
@@ -118,13 +119,14 @@ export default function Game() {
                     );
                 }
             }
-            start -= 2;
-            if (start < -108) {
+            start -= 1;
+            if (start < -100) {
                 start = 0;
             }
-        }, 40);
-        img.src = "./bg_c.png";
-    }, []);
+            img.src = `./bg_${state.category[0]}.png`;
+        }
+        requestAnimationFrame(animate)
+    }, [state.category]);
 
     return (
         <div id="Game">

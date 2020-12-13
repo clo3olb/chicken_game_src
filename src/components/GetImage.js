@@ -36,6 +36,8 @@ import bg_c from "../img/bg_c.png";
 import bg_h from "../img/bg_h.png";
 import bg_p from "../img/bg_p.png";
 
+import reset from '../img/reset.png';
+
 export default function GetImage({ category, index }) {
     switch (category) {
         case "chicken":
@@ -113,6 +115,7 @@ export default function GetImage({ category, index }) {
                 default:
                     return <></>;
             }
+        case "reset": return <img src={reset} alt="reset" />;
         default:
             return <></>;
     }

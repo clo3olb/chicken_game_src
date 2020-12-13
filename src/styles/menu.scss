@@ -2,8 +2,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .setting {
-        width: 4rem;
+    .reset {
+        width: 5rem;
+            height: 5rem;
+            border-radius: 1rem;
+            border: 5px solid $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            img {
+                width: 60%;
+            }
     }
     .stages {
         display: flex;

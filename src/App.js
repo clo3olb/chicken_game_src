@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles/styles.scss";
 
 import Menu from "./components/Menu";
 import Equation from "./components/Equation";

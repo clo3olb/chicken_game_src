@@ -9,7 +9,7 @@ export default function Equation() {
     const [state, dispatch] = useTracked();
 
     function createEquation() {
-        const { limit } = state.equation;
+        const limit = state.category === 'chicken' ? 10 : state.category === 'pizza' ? 20 : 30;
         const coefficient = random(limit);
         const symbol = random(2) == 1 ? "+" : "-";
         const answer = random(limit);
@@ -21,11 +21,12 @@ export default function Equation() {
         right = symbol == "+" ? right + number : right - number;
         return right;
     }
-    function updateEquation({ coefficient, answer, symbol, number }) {
+    function updateEquation({ coefficient, answer, symbol, number, limit }) {
         dispatch({
             type: "SET_EQUATION",
             equation: {
                 ...state.equation,
+                limit,
                 left: {
                     ...state.equation.left,
                     coefficient,
@@ -46,15 +47,15 @@ export default function Equation() {
 
     function handleCheckClick(e) {
         if (state.balance == "equal" || state.balance == "none") {
+            dispatch({ type: "CHECK_EQUATION" });
+            const element = document.getElementById("Equation");
+            element.classList.remove("shake");
+            void element.offsetWidth;
+            element.classList.add("shake");
         } else {
             dispatch({ type: "RESET_EQUATION" });
         }
-        dispatch({ type: "CHECK_EQUATION" });
 
-        const element = document.getElementById("Equation");
-        element.classList.remove("shake");
-        void element.offsetWidth;
-        element.classList.add("shake");
     }
 
     useEffect(() => {
@@ -66,7 +67,7 @@ export default function Equation() {
 
     useEffect(() => {
         createEquation();
-    }, []);
+    }, [state.category]);
 
     const { left, right } = state.equation;
 
@@ -79,8 +80,8 @@ export default function Equation() {
                 {state.balance == "none"
                     ? "정답확인"
                     : state.balance == "equal"
-                    ? "정답"
-                    : "오답"}
+                        ? "정답"
+                        : "오답"}
             </button>
             {left.coefficient > 1 ? `${left.coefficient} x ` : undefined} &nbsp;
             <div className="answer">

@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import { createContainer } from "../node_modules/react-tracked";
 
 const initialState = {
+    loaded: false,
     category: "chicken",
     selected: {
         index: 1,
@@ -23,7 +24,13 @@ const initialState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case "LOADED":
+            return {
+                ...state,
+                loaded: true
+            };
         case "SET_CATEGORY":
+            console.log('setting')
             return {
                 ...state,
                 category: action.category,
