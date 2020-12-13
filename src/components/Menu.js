@@ -23,8 +23,13 @@ export default function Menu() {
     const [state, dispatch] = useTracked();
     useEffect(() => {
         if (!state.loaded) {
-            dispatch({ type: "SET_CATEGORY", category: localStorage.getItem('category') });
-            dispatch({ type: 'LOADED' });
+            if (localStorage.getItem('category') == 'null' || null) {
+                localStorage.clear()
+            }
+            else {
+                dispatch({ type: "SET_CATEGORY", category: localStorage.getItem('category') });
+                dispatch({ type: 'LOADED' });
+            }
         }
     }, [])
     useEffect(() => {

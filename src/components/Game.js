@@ -123,7 +123,7 @@ export default function Game() {
             if (start < -100) {
                 start = 0;
             }
-            img.src = `./bg_${state.category[0]}.png`;
+            img.src = state.category === 'chicken' ? "./bg_c.png" : state.category === 'pizza' ? "./bg_p.png" : "./bg_h.png";
         }
         requestAnimationFrame(animate)
     }, [state.category]);
