@@ -34,6 +34,11 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    #Equation{
+        font-size: 4rem;
+    }
+}
 @keyframes shake {
     10%,
     90% {
