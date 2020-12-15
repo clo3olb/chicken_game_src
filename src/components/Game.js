@@ -100,7 +100,7 @@ export default function Game() {
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
         const ctx = canvas.getContext("2d");
-        ctx.globalAlpha = 0.4;
+        ctx.globalAlpha = 0.1;
         let img = new Image();
         let start = 0;
         function animate() {
@@ -108,8 +108,9 @@ export default function Game() {
             const size = 100;
             const gap = 0;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < 10; i++) {
-                for (let j = 0; j < 10; j++) {
+
+            for (let i = 0; i < window.innerWidth / size; i++) {
+                for (let j = 0; j < window.innerHeight / size; j++) {
                     ctx.drawImage(
                         img,
                         start + i * (size + gap),
@@ -123,9 +124,9 @@ export default function Game() {
             if (start < -100) {
                 start = 0;
             }
-            img.src = state.category === 'chicken' ? "./bg_c.png" : state.category === 'pizza' ? "./bg_p.png" : "./bg_h.png";
         }
-        requestAnimationFrame(animate)
+        img.src = state.category === 'chicken' ? "./bg_c.png" : state.category === 'pizza' ? "./bg_p.png" : "./bg_h.png";
+        img.onload = requestAnimationFrame(animate)
     }, [state.category]);
 
     return (
