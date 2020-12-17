@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/chicken_game_src/static/css/main.8a65c304.chunk.css",
-    "main.js": "/chicken_game_src/static/js/main.9380ea1b.chunk.js",
-    "main.js.map": "/chicken_game_src/static/js/main.9380ea1b.chunk.js.map",
+    "main.css": "/chicken_game_src/static/css/main.90b2d79d.chunk.css",
+    "main.js": "/chicken_game_src/static/js/main.0899b1cb.chunk.js",
+    "main.js.map": "/chicken_game_src/static/js/main.0899b1cb.chunk.js.map",
     "runtime-main.js": "/chicken_game_src/static/js/runtime-main.6b203f1e.js",
     "runtime-main.js.map": "/chicken_game_src/static/js/runtime-main.6b203f1e.js.map",
     "static/js/2.71fab727.chunk.js": "/chicken_game_src/static/js/2.71fab727.chunk.js",
     "static/js/2.71fab727.chunk.js.map": "/chicken_game_src/static/js/2.71fab727.chunk.js.map",
     "index.html": "/chicken_game_src/index.html",
-    "static/css/main.8a65c304.chunk.css.map": "/chicken_game_src/static/css/main.8a65c304.chunk.css.map",
+    "static/css/main.90b2d79d.chunk.css.map": "/chicken_game_src/static/css/main.90b2d79d.chunk.css.map",
     "static/js/2.71fab727.chunk.js.LICENSE.txt": "/chicken_game_src/static/js/2.71fab727.chunk.js.LICENSE.txt",
     "static/media/balance_center_c.db5bb963.png": "/chicken_game_src/static/media/balance_center_c.db5bb963.png",
     "static/media/balance_center_h.7ab5342d.png": "/chicken_game_src/static/media/balance_center_h.7ab5342d.png",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.6b203f1e.js",
     "static/js/2.71fab727.chunk.js",
-    "static/css/main.8a65c304.chunk.css",
-    "static/js/main.9380ea1b.chunk.js"
+    "static/css/main.90b2d79d.chunk.css",
+    "static/js/main.0899b1cb.chunk.js"
   ]
 }
