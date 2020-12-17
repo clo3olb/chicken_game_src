@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/chicken_game_src/static/css/main.8a65c304.chunk.css",
-    "main.js": "/chicken_game_src/static/js/main.e545919b.chunk.js",
-    "main.js.map": "/chicken_game_src/static/js/main.e545919b.chunk.js.map",
+    "main.js": "/chicken_game_src/static/js/main.70ba8329.chunk.js",
+    "main.js.map": "/chicken_game_src/static/js/main.70ba8329.chunk.js.map",
     "runtime-main.js": "/chicken_game_src/static/js/runtime-main.6b203f1e.js",
     "runtime-main.js.map": "/chicken_game_src/static/js/runtime-main.6b203f1e.js.map",
     "static/js/2.71fab727.chunk.js": "/chicken_game_src/static/js/2.71fab727.chunk.js",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.6b203f1e.js",
     "static/js/2.71fab727.chunk.js",
     "static/css/main.8a65c304.chunk.css",
-    "static/js/main.e545919b.chunk.js"
+    "static/js/main.70ba8329.chunk.js"
   ]
 }
