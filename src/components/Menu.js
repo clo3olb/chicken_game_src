@@ -3,6 +3,7 @@ import { useTracked } from "../state";
 
 // Images
 import settingIcon from "../img/setting.png";
+import fullscreenIcon from "../img/fullscreen.png";
 import { useEffect, useState } from "react";
 import Setting from "./Setting";
 
@@ -35,6 +36,8 @@ export default function Menu() {
       }
     }
     console.log(state.category, state.equation.limit);
+
+    console.log(document.fullscreenEnabled);
   }, []);
 
   function handleReset() {
@@ -44,6 +47,14 @@ export default function Menu() {
   function handleSettingsClick() {
     setSettingsOpen((settingsOpen) => !settingsOpen);
   }
+  function handleFullscreenClick() {
+    const app = document.getElementById("App");
+    if (!document.fullscreenElement) {
+      app.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
   return (
     <div id="Menu">
       <div className="reset" onClick={handleReset}>
@@ -51,6 +62,9 @@ export default function Menu() {
       </div>
       <div className="settings" onClick={handleSettingsClick}>
         <img src={settingIcon} alt="setting" />
+      </div>
+      <div className="fullscreen" onClick={handleFullscreenClick}>
+        <img src={fullscreenIcon} alt="fullscreen" />
       </div>
       {settingsOpen && <Setting setSettingsOpen={setSettingsOpen} />}
       <div className="stages">

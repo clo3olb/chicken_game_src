@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   .reset,
-  .settings {
+  .settings,
+  .fullscreen {
     width: 5rem;
     margin-right: 1rem;
     height: 5rem;
@@ -17,7 +18,7 @@
       width: 60%;
     }
   }
-  .settings {
+  .fullscreen {
     margin-right: auto;
   }
   .settings_popup {

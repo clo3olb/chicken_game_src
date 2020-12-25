@@ -1,63 +1,62 @@
 #Equation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 6rem;
-    border-radius: 2rem;
-    padding: 1rem;
-    position: relative;
-    font-family: "Baloo 2", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  position: relative;
+  font-family: "Baloo 2", cursive;
 
-    .check {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 3rem;
-        width: fit-content;
-        padding: 1rem;
-        top: -5rem;
-        border-radius: 1rem 1rem 0 0;
-        font-family: "Jua", sans-serif;
-    }
-    .answer {
-        padding: 0.5rem 1rem;
-        border-radius: 1rem;
-        background-color: $white;
-        color: $black;
-        text-align: center;
-        min-width: 6rem;
-    }
-    &.shake {
-        animation: shake 1s ease forwards;
-    }
+  .check {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    top: -5rem;
+    border-radius: 1rem 1rem 0 0;
+    font-family: "Jua", sans-serif;
+  }
+  .answer {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: $white;
+    color: $black;
+    text-align: center;
+    min-width: 6rem;
+  }
+  &.shake {
+    animation: shake 1s ease forwards;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    #Equation{
-        font-size: 4rem;
-    }
+  #Equation {
+    font-size: 4rem;
+  }
 }
 @keyframes shake {
-    10%,
-    90% {
-        transform: translate3d(-1px, 0, 0);
-    }
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
-    20%,
-    80% {
-        transform: translate3d(2px, 0, 0);
-    }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
 
-    30%,
-    50%,
-    70% {
-        transform: translate3d(-4px, 0, 0);
-    }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
 
-    40%,
-    60% {
-        transform: translate3d(4px, 0, 0);
-    }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

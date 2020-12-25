@@ -5,6 +5,9 @@ function random(limit) {
   return Math.floor(Math.random() * limit);
 }
 
+const correct = new Audio("./correct.m4a");
+const wrong = new Audio("./wrong.m4a");
+
 export default function Equation() {
   const [state, dispatch] = useTracked();
 
@@ -69,8 +72,12 @@ export default function Equation() {
 
   useEffect(() => {
     if (state.balance == "equal") {
+      correct.play();
       setTimeout(() => createEquation(), 1000);
       setTimeout(() => dispatch({ type: "RESET_SLIDE_PAGE" }), 3200);
+    }
+    if (state.balance == "left" || state.balance == "right") {
+      wrong.play();
     }
   }, [state.balance]);
 
